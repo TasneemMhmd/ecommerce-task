@@ -10,6 +10,7 @@ export default {
         primary: "#FA7070",
         border:'#EAEAEA',
         text: "#111111",
+        badge: "#F4F4F4",
       },
     },
   },

@@ -31,8 +31,8 @@ function HeroSection() {
               Find yours with our collection and more.
             </p>
           </div>
-          <button className="max-w-[112.59px] h-[40px] px-[24px] bg-white flex items-center justify-center whitespace-nowrap mr-auto">
-            <span className="text-text font-medium text-[14px] leading-[100%]">
+          <button className="group max-w-[112.59px] h-[40px] px-[24px] bg-white flex items-center justify-center whitespace-nowrap mr-auto hover:bg-text transition-colors duration-300">
+            <span className="text-text font-medium text-[14px] leading-[100%] group-hover:text-white transition-colors duration-300">
               Shop Now
             </span>
           </button>

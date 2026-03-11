@@ -9,7 +9,7 @@ function Header() {
                 <div className="max-w-[1200px] w-full flex items-center justify-between mx-auto">
                     <div className="flex items-center gap-3">
                         <MobileMenu />
-                        <a href="#"><p className="font-bold text-2xl leading-9 tracking-[-0.5px]">VisioCreate.</p></a>
+                        <a href="#"><p className="font-bold text-text text-2xl leading-9 tracking-[-0.5px]">VisioCreate.</p></a>
                     </div>
                     <NavLinks />
                     <NavIcons />
