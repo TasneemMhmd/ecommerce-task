@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         primary: "#FA7070",
+        secondary: '#1976D2',
         border:'#EAEAEA',
         text: "#111111",
         badge: "#F4F4F4",
