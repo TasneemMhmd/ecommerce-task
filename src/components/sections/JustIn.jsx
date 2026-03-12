@@ -5,8 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import Error from "../ui/error";
-import Loader from "../ui//Loader";
+import Error from "../ui/Rrror";
+import Loader from "../ui/Loader";
 
 const DESKTOP_VISIBLE = 5;
 
