@@ -55,9 +55,9 @@ function Footer() {
                             </p>
                             <div className="flex flex-col gap-[12px]">
                                 {pages.map((page) => (
-                                    <p key={page} className="w-fit font-normal text-[14px] leading-[21px] text-textLight2">
+                                    <a href="#" key={page} className="w-fit font-normal text-[14px] leading-[21px] text-textLight2">
                                         {page}
-                                    </p>
+                                    </a>
                                 ))}
                             </div>
                         </div>
@@ -67,9 +67,9 @@ function Footer() {
                             </p>
                             <div className="flex flex-col gap-[12px]">
                                 {Info.map((info) => (
-                                    <p key={info} className="w-fit font-normal text-[14px] leading-[21px] text-textLight2">
+                                    <a href="#" key={info} className="w-fit font-normal text-[14px] leading-[21px] text-textLight2">
                                         {info}
-                                    </p>
+                                    </a>
                                 ))}
                             </div>
                         </div>
@@ -96,8 +96,8 @@ function Footer() {
                             Copyright © 2023 VisioCreate. All rights reserved.
                         </p>
                         <div className="flex gap-[16px]">
-                            <p className="font-normal text-[12px] leading-[18px] text-textLight">Privacy Policy</p>
-                            <p className="font-normal text-[12px] leading-[18px] text-textLight">Terms & Conditions</p>
+                            <a href="#" className="font-normal text-[12px] leading-[18px] text-textLight">Privacy Policy</a>
+                            <a href="#" className="font-normal text-[12px] leading-[18px] text-textLight">Terms & Conditions</a>
                         </div>
                         <div className="flex gap-[8px] items-center">
                             {PaymentMethods.map((method) => (
