@@ -1,10 +1,15 @@
+import puffers from "../../assets/images/Puffers.png";
+import jackets from "../../assets/images/jackets.png";
+import gilets from "../../assets/images/Gilets.png";
+import rainwear from "../../assets/images/Rainwear.png";
+
 const cats = [
-    { img: "/src/assets/images/Puffers.png", name: "Puffers" },
-    { img: "/src/assets/images/jackets.png", name: "Bombers" },
-    { img: "/src/assets/images/Puffers.png", name: "Lightweight jackets" },
-    { img: "/src/assets/images/Gilets.png", name: "Gilets" },
-    { img: "/src/assets/images/jackets.png", name: "Coats" },
-    { img: "/src/assets/images/Rainwear.png", name: "Rainwear" },
+    { img: puffers, name: "Puffers" },
+    { img: jackets, name: "Bombers" },
+    { img: puffers, name: "Lightweight jackets" },
+    { img: gilets, name: "Gilets" },
+    { img: jackets, name: "Coats" },
+    { img: rainwear, name: "Rainwear" },
 ];
 
 function Categories() {

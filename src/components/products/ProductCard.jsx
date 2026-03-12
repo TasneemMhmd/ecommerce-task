@@ -1,4 +1,5 @@
 import { useState } from "react";
+import star from "../../assets/icons/star.svg";
 
 function ProductCard({ img, rating, title, price, badge }) {
     const [isHovered, setIsHovered] = useState(false);
@@ -14,7 +15,7 @@ function ProductCard({ img, rating, title, price, badge }) {
                 <img src={img} alt={title} className="w-full h-full object-contain" />
 
                 <div className="absolute top-2 left-2 bg-white text-text text-xs font-semibold px-2 py-1 rounded">
-                    <p className="font-inter font-semibold text-[11px] leading-[16.5px]">
+                    <p className="font-semibold text-[11px] leading-[16.5px]">
                         {badge}
                     </p>
                 </div>
@@ -35,7 +36,7 @@ function ProductCard({ img, rating, title, price, badge }) {
 
                 <div className={`absolute bottom-0 left-0 right-0 flex items-center justify-center pb-2 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
                     <button className="w-[90%] h-[44px] bg-text text-white rounded-[4px] flex items-center justify-center">
-                        <span className="font-inter font-medium text-[13px] leading-[19.5px]">
+                        <span className="font-medium text-[13px] leading-[19.5px]">
                             Add to cart
                         </span>
                     </button>
@@ -47,7 +48,7 @@ function ProductCard({ img, rating, title, price, badge }) {
                     {[...Array(5)].map((_, index) => (
                         <img
                             key={index}
-                            src="/src/assets/icons/star.svg"
+                            src={star}
                             alt="Star"
                             className={`w-3 h-3 ${index < Math.round(rating) ? 'opacity-100' : 'opacity-0'}`}
                         />

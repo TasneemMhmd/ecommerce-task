@@ -13,7 +13,7 @@ function BestSeller() {
         <div className="w-full">
             <div className="max-w-[1200px] w-full flex flex-col gap-[40px] pt-[160px] pb-[80px] mx-auto px-6">
                 <div className="w-full flex justify-center items-center">
-                    <p className="font-inter font-bold text-[28px] leading-[42px] text-center text-text whitespace-nowrap">
+                    <p className="font-bold text-[28px] leading-[42px] text-center text-text whitespace-nowrap">
                         Best Seller
                     </p>
                 </div>

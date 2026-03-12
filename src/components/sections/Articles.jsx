@@ -1,9 +1,12 @@
+import article1 from "../../assets/images/article1.png";
+import article2 from "../../assets/images/article2.png";
+import article3 from "../../assets/images/article3.png";
 import Link from "../ui/Link";
 
 const articles = [
-    { image: "/src/assets/images/article1.png", title: "2023 Holiday Gift Guide" },
-    { image: "/src/assets/images/article2.png", title: "2023 Holiday Gift Guide" },
-    { image: "/src/assets/images/article3.png", title: "2023 Holiday Gift Guide" }
+    { image: article1, title: "2023 Holiday Gift Guide" },
+    { image: article2, title: "2023 Holiday Gift Guide" },
+    { image: article3, title: "2023 Holiday Gift Guide" },
 ];
 
 function Articles() {
@@ -11,7 +14,7 @@ function Articles() {
         <div className="w-full mx-auto flex justify-center">
             <div className="w-full max-w-[1200px] pt-[80px] pb-[80px] flex flex-col gap-[40px] px-6">
                 <div className="w-full flex justify-between items-center">
-                    <p className="font-bold text-[28px] leading-[42px] tracking-[0px] text-text whitespace-nowrap">
+                    <p className="font-bold text-[28px] leading-[42px]  text-text whitespace-nowrap">
                         Latest Articles
                     </p>
                     <div className="flex gap-[4px]">

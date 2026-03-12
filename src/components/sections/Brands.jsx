@@ -49,7 +49,7 @@ function Brands() {
                                 key={index}
                                 style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
                             >
-                                <p className="w-[122px] h-[30px] font-extrabold text-[20px] leading-[30px] tracking-[0px] text-center">
+                                <p className="w-[122px] h-[30px] font-extrabold text-[20px] leading-[30px]  text-center">
                                     {brand}
                                 </p>
                             </SwiperSlide>

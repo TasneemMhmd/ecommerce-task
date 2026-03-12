@@ -12,6 +12,8 @@ export default {
         border:'#EAEAEA',
         text: "#111111",
         badge: "#F4F4F4",
+        textLight: "#666666",
+        textLight2: "#555555",
       },
     },
   },

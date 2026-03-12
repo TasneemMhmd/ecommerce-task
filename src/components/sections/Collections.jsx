@@ -1,11 +1,14 @@
-import { ArrowRight } from "lucide-react";
 import Link from "../ui/Link";
+import article1 from "../../assets/images/article1.png";
+import collection2 from "../../assets/images/collection2.png";
+import collection1 from "../../assets/images/collection1.png";
+import article2 from "../../assets/images/article2.png";
 
 const collections = [
-    { image: "/src/assets/images/article1.png", title: "November Outfits" },
-    { image: "/src/assets/images/collection2.png", title: "Cashmere Set" },
-    { image: "/src/assets/images/collection1.png", title: "The New Nordic" },
-    { image: "/src/assets/images/article2.png", title: "The Leather" },
+    { image: article1, title: "November Outfits" },
+    { image: collection2, title: "Cashmere Set" },
+    { image: collection1, title: "The New Nordic" },
+    { image: article2, title: "The Leather" },
 ];
 
 function Collections() {

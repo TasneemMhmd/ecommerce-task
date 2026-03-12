@@ -35,7 +35,7 @@ function JustIn() {
         <div className="w-full">
             <div className="max-w-[1200px] mx-auto py-[80px] flex flex-col gap-[40px] px-6">
                 <div className="w-full h-[42px] flex items-center justify-between">
-                    <p className="font-inter font-bold text-[28px] leading-[42px] text-text whitespace-nowrap">
+                    <p className="font-bold text-[28px] leading-[42px] text-text whitespace-nowrap">
                         Just In
                     </p>
 

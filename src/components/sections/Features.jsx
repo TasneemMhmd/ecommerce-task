@@ -1,8 +1,13 @@
+import shippingIcon from "../../assets/icons/shipping.svg";
+import moneyIcon from "../../assets/icons/money.svg";
+import secureIcon from "../../assets/icons/secure.svg";
+import supportIcon from "../../assets/icons/support.svg";
+
 const features = [
-    { id: 1, icon: "/src/assets/icons/shipping.svg", title: "Free Shipping", description: "Order above $200" },
-    { id: 2, icon: "/src/assets/icons/money.svg", title: "Money-back", description: "30 days guarantee" },
-    { id: 3, icon: "/src/assets/icons/secure.svg", title: "Secure Payments", description: "Secured by Stripe" },
-    { id: 4, icon: "/src/assets/icons/support.svg", title: "24/7 Support", description: "Phone and Email support" }
+    { id: 1, icon: shippingIcon, title: "Free Shipping", description: "Order above $200" },
+    { id: 2, icon: moneyIcon, title: "Money-back", description: "30 days guarantee" },
+    { id: 3, icon: secureIcon, title: "Secure Payments", description: "Secured by Stripe" },
+    { id: 4, icon: supportIcon, title: "24/7 Support", description: "Phone and Email support" }
 ];
 
 function Features() {
@@ -15,7 +20,7 @@ function Features() {
                             <img src={feature.icon} alt={feature.title} className="w-6 h-6" />
                         </div>
                         <p className="font-semibold text-[16px] leading-[24px] text-center text-text">{feature.title}</p>
-                        <p className="font-normal text-[13px] leading-[19.5px] text-center text-[#666666]">{feature.description}</p>
+                        <p className="font-normal text-[13px] leading-[19.5px] text-center text-textLight">{feature.description}</p>
                     </div>
                 ))}
             </div>
