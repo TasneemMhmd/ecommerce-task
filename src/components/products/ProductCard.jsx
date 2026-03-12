@@ -7,7 +7,7 @@ function ProductCard({ img, rating, title, price, badge }) {
     return (
         <div className="relative w-full flex flex-col gap-3">
             <div
-                className="relative w-full aspect-[220.8/275.98] rounded-lg bg-[#F4F4F4] overflow-hidden"
+                className="relative w-full aspect-[220.8/275.98] rounded-lg bg-badge overflow-hidden"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >

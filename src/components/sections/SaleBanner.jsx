@@ -6,7 +6,7 @@ function SaleBanner() {
         <div className="w-full">
             <div className="w-full max-w-[1440px] h-auto md:h-[400px] flex flex-col md:flex-row mx-auto">
                 <img src="/src/assets/images/sale-banner.png" alt="Sale Banner" className="w-full md:w-[660px] h-[260px] md:h-[400px] object-cover" />
-                <div className="w-full md:w-[780px] h-auto md:h-[400px] px-6 py-[60px] md:p-[60px] overflow-hidden bg-[#F4F4F4] flex flex-col justify-center">                    <div className="w-full md:w-[660px] h-[34px] pb-[16px]">
+                <div className="w-full md:w-[780px] h-auto md:h-[400px] px-6 py-[60px] md:p-[60px] overflow-hidden bg-badge flex flex-col justify-center">                    <div className="w-full md:w-[660px] h-[34px] pb-[16px]">
                     <p className="h-[18px] font-semibold text-[12px] leading-[18px] tracking-[1px] uppercase text-secondary">
                         SALE UP TO 35% OFF
                     </p>
