@@ -1,13 +1,14 @@
-import { CartProvider } from './context/CartContext'
-import Home from './pages/Home'
+import { RouterProvider } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
+import {routes} from './routes/Routes';
 
 function App() {
 
   return (
     <CartProvider>
-      <Home />
+      <RouterProvider router={routes} />
     </CartProvider>
-  )
+  );
 }
 
-export default App
+export default App;

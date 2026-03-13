@@ -15,6 +15,7 @@ function JustIn() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
 
     useEffect(() => {
         getProducts()
@@ -43,11 +44,10 @@ function JustIn() {
                             {[0, 1, 2].map((i) => (
                                 <span
                                     key={i}
-                                    className={`rounded-full transition-all duration-300 ${
-                                        activeIndex % 3 === i
+                                    className={`rounded-full transition-all duration-300 ${activeIndex % 3 === i
                                             ? "w-[8px] h-[8px] bg-text"
                                             : "w-[8px] h-[8px] bg-[#D1D5DB]"
-                                    }`}
+                                        }`}
                                 />
                             ))}
                         </div>
@@ -56,12 +56,16 @@ function JustIn() {
 
                 <div className="w-full">
                     <Swiper
+                        onSliderFirstMove={() => setIsDragging(true)}
                         key={needsSwiper ? "swiper-enabled" : "swiper-disabled"}
                         modules={[Autoplay]}
                         grabCursor={true}
                         loop={needsSwiper}
                         autoplay={needsSwiper ? { delay: 2000, disableOnInteraction: false } : false}
-                        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+                        onSlideChange={(swiper) => {
+        setActiveIndex(swiper.realIndex);
+        setTimeout(() => setIsDragging(false), 100);
+    }}
                         breakpoints={{
                             0: { slidesPerView: 1.5, spaceBetween: 16 },
                             480: { slidesPerView: 2.5, spaceBetween: 16 },
@@ -80,6 +84,8 @@ function JustIn() {
                                     price={product.price}
                                     rating={product.rating.rate}
                                     badge="New"
+                                        isDragging={isDragging}
+
                                 />
                             </SwiperSlide>
                         ))}

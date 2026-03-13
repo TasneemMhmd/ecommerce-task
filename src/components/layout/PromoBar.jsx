@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import { useState } from "react";
 import IconBtn from "../ui/IconBtn";
+import { Link } from "react-router-dom";
 
 function PromoBar() {
     const [isVisible, setIsVisible] = useState(true);
@@ -11,9 +12,9 @@ function PromoBar() {
                     <div className="max-w-[1440px] mx-auto px-[24px] pt-[9px] pb-[10px] flex justify-center items-center">
                         <p className="text-[13px] leading-[19.5px] font-normal text-white">
                             📦 30% off storewide — Limited time! <span className="hidden md:inline">S
-                                <a href="#"><span className="underline cursor-pointer">
+                                <Link to="/shop"><span className="underline cursor-pointer">
                                     hop Now →
-                                </span></a></span>
+                                </span></Link></span>
                         </p>
                         <div className="ml-2 md:absolute md:right-[24px]">
                             <IconBtn

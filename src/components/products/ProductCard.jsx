@@ -1,19 +1,26 @@
 import { useState } from "react";
 import star from "../../assets/icons/star.svg";
 import { useCart } from "../../hooks/useCart";
+import { useNavigate } from "react-router-dom";
 
-function ProductCard({ id, img, rating, title, price, badge }) {
+function ProductCard({ id, img, rating, title, price, badge, isDragging }) {
     const [isHovered, setIsHovered] = useState(false);
     const [isWishlisted, setIsWishlisted] = useState(false);
-    const { addItem, cartItems, quantity, updateQuantity, toggleCart } = useCart();
+    const { addItem, cartItems, updateQuantity, toggleCart } = useCart();
     const cartItem = cartItems.find((item) => item.title === title);
     const isInCart = !!cartItem;
+    const navigate = useNavigate();
+
+    const handleCardClick = () => {
+        if (!isDragging) navigate(`/product/${id}`);
+    };
+
     return (
         <div className="relative w-full flex flex-col gap-3">
             <div
-                className="relative w-full aspect-[220.8/275.98] rounded-lg bg-badge overflow-hidden"
-                onMouseEnter={() => setIsHovered(true)}
+                className={`relative w-full aspect-[220.8/275.98] rounded-lg bg-badge overflow-hidden ${isDragging ? 'cursor-grabbing' : 'cursor-pointer'}`} onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
+                onClick={handleCardClick}
             >
                 <img src={img} alt={title} className="w-full h-full object-contain" />
 

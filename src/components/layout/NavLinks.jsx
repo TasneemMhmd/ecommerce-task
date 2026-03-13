@@ -3,10 +3,24 @@ import DropdownMenu from "./DropdownMenu";
 import AnimatedLink from "../ui/AnimatedLink";
 
 const navItems = [
-    { label: "Home", href: "#" },
-    { label: "Shop", items: ["Cat1", "Cat2", "Cat3"] },
-    { label: "Product", items: ["Pro1", "Pro2", "Pro3"] },
-    { label: "Contact Us", href: "#" },
+    { label: "Home", path: "/" },
+    {
+        label: "Shop",
+        items: [
+            { label: "Cat1", path: "/category/1" },
+            { label: "Cat2", path: "/category/2" },
+            { label: "Cat3", path: "/category/3" },
+        ],
+    },
+    {
+        label: "Product",
+        items: [
+            { label: "Pro1", path: "/product/1" },
+            { label: "Pro2", path: "/product/2" },
+            { label: "Pro3", path: "/product/3" }
+        ]
+    },
+    { label: "Contact Us", path: "/contact" },
 ];
 
 function NavLinks() {
@@ -25,9 +39,12 @@ function NavLinks() {
                         onLeave={() => setOpenMenu(null)}
                     />
                 ) : (
-                    <a key={item.label} href={item.href} className="group">
-                        <AnimatedLink label={item.label} className="font-medium text-[14px] leading-[21px] text-text" groupHover />
-                    </a>
+                    <AnimatedLink
+                        label={item.label}
+                        to={item.path}
+                        className="font-medium text-[14px] leading-[21px] text-text"
+                        groupHover
+                    />
                 )
             )}
         </div>

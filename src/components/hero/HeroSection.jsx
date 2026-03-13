@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import hero from "../../assets/images/hero.png";
 
 function HeroSection() {
+  const navigate = useNavigate();
   return (
     <div className="bg-primary w-full h-[600px] px-[144px] max-xl:px-[24px] overflow-hidden">
       <div
@@ -31,7 +33,7 @@ function HeroSection() {
               Find yours with our collection and more.
             </p>
           </div>
-          <button className="group max-w-[112.59px] h-[40px] px-[24px] bg-white flex items-center justify-center whitespace-nowrap mr-auto hover:bg-text transition-colors duration-300">
+          <button onClick={() => navigate("/shop")} className="group max-w-[112.59px] h-[40px] px-[24px] bg-white flex items-center justify-center whitespace-nowrap mr-auto hover:bg-text transition-colors duration-300">
             <span className="text-text font-medium text-[14px] leading-[100%] group-hover:text-white transition-colors duration-300">
               Shop Now
             </span>

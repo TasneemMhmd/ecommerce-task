@@ -1,13 +1,28 @@
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
 import search from "../../assets/icons/search.svg";
+import { Link } from "react-router-dom";
 
 const navItems = [
-    { label: "Profile", href: "#" },
-    { label: "Home", href: "#" },
-    { label: "Shop", items: ["Cat1", "Cat2", "Cat3"] },
-    { label: "Product", items: ["Pro1", "Pro2", "Pro3"] },
-    { label: "Contact Us", href: "#" },
+    { label: "Profile", path: "/profile" },
+    { label: "Home", path: "/" },
+    {
+        label: "Shop",
+        items: [
+            { label: "Cat1", path: "/category/1" },
+            { label: "Cat2", path: "/category/2" },
+            { label: "Cat3", path: "/category/3" },
+        ],
+    },
+    {
+        label: "Product",
+        items: [
+            { label: "Pro1", path: "/product/1" },
+            { label: "Pro2", path: "/product/2" },
+            { label: "Pro3", path: "/product/3" }
+        ]
+    },
+    { label: "Contact Us", path: "/contact" },
 ];
 
 function MobileMenu() {
@@ -80,26 +95,26 @@ function MobileMenu() {
                                 {openMenu === item.label && (
                                     <div className="flex flex-col pb-2 pl-4 pr-2">
                                         {item.items.map((sub) => (
-                                            <a
-                                                key={sub}
-                                                href="#"
-                                                onClick={() => setActiveLink(sub)}
+                                            <Link
+                                                key={sub.label}
+                                                to={sub.path}
+                                                onClick={() => setActiveLink(sub.label)}
                                                 className={`text-[13px] py-2 px-2 rounded transition-all duration-150
-                                                    ${activeLink === sub
+                                                ${activeLink === sub.label
                                                         ? "text-black font-semibold bg-gray-100 pl-3"
                                                         : "text-text hover:text-black hover:bg-gray-50 hover:pl-3"
                                                     }`}
                                             >
-                                                {sub}
-                                            </a>
+                                                {sub.label}
+                                            </Link>
                                         ))}
                                     </div>
                                 )}
                             </div>
                         ) : (
-                            <a
+                            <Link
                                 key={item.label}
-                                href={item.href}
+                                to={item.path}
                                 onClick={() => setActiveLink(item.label)}
                                 className={`block font-medium text-[14px] py-3 border-b border-gray-100 px-2 rounded transition-all duration-150
                                     ${activeLink === item.label
@@ -108,7 +123,7 @@ function MobileMenu() {
                                     }`}
                             >
                                 {item.label}
-                            </a>
+                            </Link>
                         )
                     )}
                 </div>

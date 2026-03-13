@@ -2,7 +2,8 @@ import article1 from "../../assets/images/article1.png";
 import article2 from "../../assets/images/article2.png";
 import article3 from "../../assets/images/article3.png";
 import HoverImg from "../ui/HoverImg";
-import Link from "../ui/Link";
+import ArrowLink from "../ui/ArrowLink ";
+import { Link } from "react-router-dom";
 
 const articles = [
     { image: article1, title: "2023 Holiday Gift Guide" },
@@ -19,7 +20,7 @@ function Articles() {
                         Latest Articles
                     </p>
                     <div className="flex gap-[4px]">
-                        <Link label="View All" />
+                        <ArrowLink label="View All" to="/articles" />
                     </div>
                 </div>
 
@@ -33,7 +34,7 @@ function Articles() {
                                 <p className="font-medium text-[16px] leading-[24px] text-text">
                                     {article.title}
                                 </p>
-                                <Link label="Read More" />
+                                <ArrowLink label="Read More" to="article" />
                             </div>
                         </div>
                     ))}

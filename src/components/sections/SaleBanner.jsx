@@ -1,10 +1,10 @@
-import Link from "../ui/Link";
+import ArrowLink  from "../ui/ArrowLink ";
 import saleBanner from "../../assets/images/sale-banner.png";
 
 function SaleBanner() {
     return (
         <div className="w-full overflow-hidden">
-            <div className="w-full max-w-[1440px] h-auto md:h-[400px] flex flex-col md:flex-row mx-auto">
+            <div className="w-full h-auto md:h-[400px] flex flex-col md:flex-row mx-auto">
                 <img
                     src={saleBanner}
                     alt="Sale Banner"
@@ -20,7 +20,7 @@ function SaleBanner() {
                     <p className="font-normal text-[16px] leading-[24px] text-textLight2">
                         Hurry up!!! Winter is coming.
                     </p>
-                    <Link />
+                    <ArrowLink to="/shop" />
                 </div>
             </div>
         </div>

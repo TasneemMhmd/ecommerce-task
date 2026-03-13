@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function DropdownMenu({ label, items, isOpen, onEnter, onLeave }) {
     return (
@@ -10,9 +11,13 @@ function DropdownMenu({ label, items, isOpen, onEnter, onLeave }) {
             <div className={`absolute top-full left-0 pt-3 w-fit transition-all duration-200 z-50 ${isOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
                 <div className="bg-white border border-border rounded-xl shadow-lg overflow-hidden">
                     {items.map((item) => (
-                        <a key={item} href="#" className="block px-4 py-2.5 text-[13px] font-medium text-text hover:bg-gray-50 hover:text-black transition-colors duration-150">
-                            {item}
-                        </a>
+                        <Link
+                            key={item.label}
+                            to={item.path}
+                            className="block px-4 py-2.5 text-[13px] font-medium text-text hover:bg-gray-50 hover:text-black transition-colors duration-150"
+                        >
+                            {item.label}
+                        </Link>
                     ))}
                 </div>
             </div>
