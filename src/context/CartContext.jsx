@@ -9,12 +9,14 @@ export const CartProvider = ({ children }) => {
     });
 
     const SHIPPING = 5;
-
     const subtotal = useMemo(() =>
         cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0),
         [cartItems]
     );
-    const total = useMemo(() => subtotal + SHIPPING, [subtotal]);
+    const total = useMemo(() =>
+        cartItems.length > 0 ? subtotal + SHIPPING : subtotal,
+        [subtotal, cartItems]
+    ); 
     const itemsCount = useMemo(() => cartItems.reduce((acc, item) => acc + item.quantity, 0), [cartItems]);
 
     useEffect(() => {
