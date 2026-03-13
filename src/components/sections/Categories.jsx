@@ -24,7 +24,9 @@ function Categories() {
                 <div className="w-full flex flex-wrap md:flex-nowrap justify-between gap-y-6">
                     {cats.map((cat) => (
                         <div key={cat.name} className="flex flex-col items-center gap-3 w-1/2 md:w-auto">
-                            <img src={cat.img} alt={cat.name} className="w-[140px] h-[140px] rounded-full object-cover" />
+                            <a href="#">
+                            <img src={cat.img} alt={cat.name} className="w-[140px] h-[140px] hover:scale-90 transition-transform duration-300 rounded-full object-cover" />
+                            </a>
                             <p className="font-medium text-[14px] leading-[21px] text-text">
                                 {cat.name}
                             </p>

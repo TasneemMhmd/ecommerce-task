@@ -1,5 +1,6 @@
-import { XIcon } from "lucide-react";
+import { X } from "lucide-react";
 import { useState } from "react";
+import IconBtn from "../ui/IconBtn";
 
 function PromoBar() {
     const [isVisible, setIsVisible] = useState(true);
@@ -14,8 +15,13 @@ function PromoBar() {
                                     hop Now →
                                 </span></a></span>
                         </p>
-                        <XIcon onClick={() => setIsVisible(false)}
-                            className="w-4 h-4 text-white cursor-pointer ml-2 md:absolute md:right-[24px]" />
+                        <div className="ml-2 md:absolute md:right-[24px]">
+                            <IconBtn
+                                onClick={() => setIsVisible(false)}
+                                icon={<X className="w-4 h-4 text-white" />}
+                                className="hover:bg-white/20"
+                            />
+                        </div>
                     </div>
                 </div>
             )}

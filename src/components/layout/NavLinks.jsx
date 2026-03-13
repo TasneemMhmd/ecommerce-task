@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DropdownMenu from "./DropdownMenu";
+import AnimatedLink from "../ui/AnimatedLink";
 
 const navItems = [
     { label: "Home", href: "#" },
@@ -25,9 +26,7 @@ function NavLinks() {
                     />
                 ) : (
                     <a key={item.label} href={item.href} className="group">
-                        <p className="font-medium text-[14px] leading-[21px] text-text relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-text after:transition-all after:duration-300 group-hover:after:w-full">
-                            {item.label}
-                        </p>
+                        <AnimatedLink label={item.label} className="font-medium text-[14px] leading-[21px] text-text" groupHover />
                     </a>
                 )
             )}

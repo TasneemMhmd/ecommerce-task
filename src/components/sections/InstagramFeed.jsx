@@ -2,6 +2,8 @@ import puffers from "../../assets/images/Puffers.png";
 import collection1 from "../../assets/images/collection1.png";
 import collection2 from "../../assets/images/collection2.png";
 import article2 from "../../assets/images/article2.png";
+import HoverImg from "../ui/HoverImg";
+import AnimatedLink from "../ui/AnimatedLink";
 
 const imgs = [
     { id: 1, src: puffers },
@@ -28,14 +30,14 @@ function InstagramFeed() {
                     <p className="max-w-[436.36px] font-normal text-[16px] leading-[24px] text-center text-textLight2">
                         Follow us on social media for more discount & promotions
                     </p>
-                    <p className="font-normal text-[16px] leading-[24px] text-textLight2 text-center">
-                        @VisioCreate_official
-                    </p>
+                    <a href="#" className="group w-fit mx-auto">
+                        <AnimatedLink label="@VisioCreate_official" className="font-normal text-[16px] leading-[24px] text-textLight2 hover:text-text transition-colors duration-300" groupHover />
+                    </a>
                 </div>
                 <div className="w-full pt-[24px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[16px]">
                     {imgs.map((img) => (
-                        <div key={img.id} className="rounded-[8px] overflow-hidden">
-                            <img src={img.src} alt="Instagram" className="w-full h-[288px] object-cover" />
+                        <div key={img.id} className="group rounded-[8px] overflow-hidden">
+                            <HoverImg src={img.src} alt="Instagram" className="w-full h-[288px]" />
                         </div>
                     ))}
                 </div>

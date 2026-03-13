@@ -1,6 +1,7 @@
 import article1 from "../../assets/images/article1.png";
 import article2 from "../../assets/images/article2.png";
 import article3 from "../../assets/images/article3.png";
+import HoverImg from "../ui/HoverImg";
 import Link from "../ui/Link";
 
 const articles = [
@@ -25,8 +26,8 @@ function Articles() {
                 <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-[24px]">
                     {articles.map((article, index) => (
                         <div key={index} className="flex flex-col gap-[16px]">
-                            <div className="w-full rounded-[8px] overflow-hidden">
-                                <img src={article.image} alt={article.title} className="w-full h-[288px] object-cover" />
+                            <div className="group w-full rounded-[8px] overflow-hidden">
+                                <HoverImg src={article.image} alt={article.title} className="w-full h-[288px]" />
                             </div>
                             <div className="flex flex-col gap-[8px]">
                                 <p className="font-medium text-[16px] leading-[24px] text-text">

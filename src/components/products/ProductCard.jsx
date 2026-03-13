@@ -1,10 +1,13 @@
 import { useState } from "react";
 import star from "../../assets/icons/star.svg";
+import { useCart } from "../../hooks/useCart";
 
-function ProductCard({ img, rating, title, price, badge }) {
+function ProductCard({ id, img, rating, title, price, badge }) {
     const [isHovered, setIsHovered] = useState(false);
     const [isWishlisted, setIsWishlisted] = useState(false);
-
+    const { addItem, cartItems, quantity, updateQuantity, toggleCart } = useCart();
+    const cartItem = cartItems.find((item) => item.title === title);
+    const isInCart = !!cartItem;
     return (
         <div className="relative w-full flex flex-col gap-3">
             <div
@@ -35,11 +38,33 @@ function ProductCard({ img, rating, title, price, badge }) {
                 </div>
 
                 <div className={`absolute bottom-0 left-0 right-0 flex items-center justify-center pb-2 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-                    <button className="w-[90%] h-[44px] bg-text text-white rounded-[4px] flex items-center justify-center">
+                    {isInCart ? (
+                        <div className="w-[90%] h-[44px] bg-text text-white rounded-[4px] flex items-center justify-between px-4">
+                            <button
+                                onClick={() => updateQuantity(cartItem.id, cartItem.quantity - 1)}
+                                className="text-white text-lg font-medium hover:opacity-60 transition-opacity"
+                            >
+                                −
+                            </button>
+                            <span className="font-medium text-[13px]">{cartItem.quantity}</span>
+                            <button
+                                onClick={() => updateQuantity(cartItem.id, cartItem.quantity + 1)}
+                                className="text-white text-lg font-medium hover:opacity-60 transition-opacity"
+                            >
+                                +
+                            </button>
+                        </div>
+                    ) : (<button
+                        onClick={() => {
+                            toggleCart();
+                            addItem({ id, img, title, price, rating })
+                        }}
+                        className="w-[90%] h-[44px] bg-text text-white rounded-[4px] flex items-center justify-center">
                         <span className="font-medium text-[13px] leading-[19.5px]">
                             Add to cart
                         </span>
                     </button>
+                    )}
                 </div>
             </div>
 

@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
 import search from "../../assets/icons/search.svg";
-import profile from "../../assets/icons/profile.svg";
 
 const navItems = [
+    { label: "Profile", href: "#" },
     { label: "Home", href: "#" },
     { label: "Shop", items: ["Cat1", "Cat2", "Cat3"] },
     { label: "Product", items: ["Pro1", "Pro2", "Pro3"] },
@@ -57,12 +57,6 @@ function MobileMenu() {
                                 </div>
                             </div>
                         )}
-                    </div>
-                    <div className="border-b border-gray-100">
-                        <button className="w-full flex items-center gap-2 font-medium text-[14px] text-text py-3 px-2 rounded hover:bg-gray-50 transition-all duration-150">
-                            <img src={profile} alt="profile" className="w-[20px] h-[20px]" />{" "}
-                            Profile
-                        </button>
                     </div>
                     {navItems.map((item) =>
                         item.items ? (

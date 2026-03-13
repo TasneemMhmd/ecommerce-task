@@ -7,6 +7,8 @@ import master from "../../assets/images/master.png";
 import paypal from "../../assets/images/paypal.png";
 import pay from "../../assets/images/pay.png";
 import { ArrowRight } from "lucide-react";
+import IconBtn from "../ui/IconBtn";
+import AnimatedLink from "../ui/AnimatedLink";
 
 const socialIcons = [
     { name: "instagram", icon: instagram },
@@ -45,7 +47,11 @@ function Footer() {
                             </div>
                             <div className="flex gap-[16px]">
                                 {socialIcons.map((item) => (
-                                    <img key={item.name} src={item.icon} alt={item.name} className="w-5 h-5" />
+                                    <IconBtn
+                                        key={item.name}
+                                        icon={<img src={item.icon} alt={item.name} className="w-5 h-5" />}
+                                        className="hover:bg-white hover:border hover:border-text transition-colors duration-200"
+                                    />
                                 ))}
                             </div>
                         </div>
@@ -55,8 +61,8 @@ function Footer() {
                             </p>
                             <div className="flex flex-col gap-[12px]">
                                 {pages.map((page) => (
-                                    <a href="#" key={page} className="w-fit font-normal text-[14px] leading-[21px] text-textLight2">
-                                        {page}
+                                    <a href="#" key={page} className="group w-fit relative">
+                                        <AnimatedLink label={page} className="font-normal text-[14px] leading-[21px] text-textLight2 group-hover:text-text transition-colors duration-300" groupHover />
                                     </a>
                                 ))}
                             </div>
@@ -67,8 +73,8 @@ function Footer() {
                             </p>
                             <div className="flex flex-col gap-[12px]">
                                 {Info.map((info) => (
-                                    <a href="#" key={info} className="w-fit font-normal text-[14px] leading-[21px] text-textLight2">
-                                        {info}
+                                    <a href="#" key={info} className="group w-fit relative">
+                                        <AnimatedLink label={info} className="font-normal text-[14px] leading-[21px] text-textLight2 group-hover:text-text transition-colors duration-300" groupHover />
                                     </a>
                                 ))}
                             </div>
@@ -85,7 +91,7 @@ function Footer() {
                                     placeholder="Enter your email"
                                     className="w-full h-[41px] pl-[16px] pr-[40px] rounded-[24px] outline-none bg-white text-[14px]"
                                 />
-                                <button className="absolute right-[4px] w-[32px] h-[32px] rounded-full bg-secondary flex items-center justify-center group transition-all duration-200 hover:scale-110 shrink-0">
+                                <button className="absolute right-[4px] w-[32px] h-[32px] rounded-full bg-secondary flex items-center justify-center group transition-all duration-200 shrink-0">
                                     <ArrowRight className="w-4 h-4 text-white transition-transform duration-200 group-hover:translate-x-0.5" />
                                 </button>
                             </div>
@@ -96,8 +102,11 @@ function Footer() {
                             Copyright © 2023 VisioCreate. All rights reserved.
                         </p>
                         <div className="flex gap-[16px]">
-                            <a href="#" className="font-normal text-[12px] leading-[18px] text-textLight">Privacy Policy</a>
-                            <a href="#" className="font-normal text-[12px] leading-[18px] text-textLight">Terms & Conditions</a>
+                            {["Privacy Policy", "Terms & Conditions"].map((item) => (
+                                <a href="#" key={item} className="group w-fit relative">
+                                    <AnimatedLink label={item} className="font-normal text-[12px] leading-[18px] text-textLight group-hover:text-text transition-colors duration-300" groupHover />
+                                </a>
+                            ))}
                         </div>
                         <div className="flex gap-[8px] items-center">
                             {PaymentMethods.map((method) => (

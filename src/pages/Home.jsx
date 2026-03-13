@@ -1,3 +1,4 @@
+import CartSidebar from "../components/cart/CartSidebar";
 import HeroSection from "../components/hero/HeroSection";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
@@ -11,12 +12,14 @@ import Features from "../components/sections/Features";
 import InstagramFeed from "../components/sections/InstagramFeed";
 import JustIn from "../components/sections/JustIn";
 import SaleBanner from "../components/sections/SaleBanner";
+import WinterCollectionsVideo from "../components/sections/WinterCollectionsVideo";
 
 function Home() {
     return (
         <>
             <PromoBar />
             <Header />
+            <CartSidebar />
             <HeroSection />
             <Brands />
             <JustIn />
@@ -24,7 +27,7 @@ function Home() {
             <Collections />
             <BestSeller />
             <SaleBanner />
-
+            <WinterCollectionsVideo />
             <Articles />
             <InstagramFeed />
             <Features />
