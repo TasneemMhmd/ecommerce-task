@@ -1,5 +1,7 @@
-Follow these steps to run the project locally:
+Live Demo:
+https://ecommerce-alpha-ten-89.vercel.app/
 
+Follow these steps to run the project locally:
 1- Install dependencies
 
 npm install
