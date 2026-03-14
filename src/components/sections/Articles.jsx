@@ -3,7 +3,6 @@ import article2 from "../../assets/images/article2.png";
 import article3 from "../../assets/images/article3.png";
 import HoverImg from "../ui/HoverImg";
 import ArrowLink from "../ui/ArrowLink ";
-import { Link } from "react-router-dom";
 
 const articles = [
     { image: article1, title: "2023 Holiday Gift Guide" },
@@ -13,34 +12,36 @@ const articles = [
 
 function Articles() {
     return (
-        <div className="w-full mx-auto flex justify-center">
-            <div className="w-full max-w-[1200px] pt-[80px] pb-[80px] flex flex-col gap-[40px] px-6">
+        <section className="articles">
+        <div className="container mx-auto">
+            <div className="w-full py-20 flex flex-col gap-10 px-6">
                 <div className="w-full flex justify-between items-center">
                     <p className="font-bold text-[28px] leading-[42px]  text-text whitespace-nowrap">
                         Latest Articles
                     </p>
-                    <div className="flex gap-[4px]">
+                    <div className="flex gap-1">
                         <ArrowLink label="View All" to="/articles" />
                     </div>
                 </div>
 
-                <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-[24px]">
+                <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
                     {articles.map((article, index) => (
-                        <div key={index} className="flex flex-col gap-[16px]">
-                            <div className="group w-full rounded-[8px] overflow-hidden">
+                        <article key={index} className="flex flex-col gap-4">
+                            <div className="group w-full rounded-lg overflow-hidden">
                                 <HoverImg src={article.image} alt={article.title} className="w-full h-[288px]" />
                             </div>
-                            <div className="flex flex-col gap-[8px]">
-                                <p className="font-medium text-[16px] leading-[24px] text-text">
+                            <div className="flex flex-col gap-2">
+                                <p className="font-medium text-base leading-6 text-text">
                                     {article.title}
                                 </p>
                                 <ArrowLink label="Read More" to="article" />
                             </div>
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>
         </div>
+        </section>
     );
 }
 

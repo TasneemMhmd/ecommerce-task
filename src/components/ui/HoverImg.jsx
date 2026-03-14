@@ -1,6 +1,6 @@
 function HoverImg({ src, alt, className = "" }) {
     return (
-        <div className={`overflow-hidden rounded-[8px] ${className}`}>
+        <div className={`overflow-hidden rounded-lg ${className}`}>
             <img
                 src={src}
                 alt={alt}

@@ -46,7 +46,7 @@ function MobileMenu() {
                     <div className="border-b border-gray-100">
                         <button
                             onClick={() => setSearchOpen(!searchOpen)}
-                            className={`w-full flex items-center gap-2 font-medium text-[14px] py-3 px-2 rounded transition-all duration-150
+                            className={`w-full flex items-center gap-2 font-medium text-sm py-3 px-2 rounded transition-all duration-150
                                 ${searchOpen
                                     ? "text-black bg-gray-100"
                                     : "text-text hover:bg-gray-50"
@@ -80,7 +80,7 @@ function MobileMenu() {
                                     onClick={() =>
                                         setOpenMenu(openMenu === item.label ? null : item.label)
                                     }
-                                    className={`w-full flex items-center justify-between font-medium text-[14px] py-3 px-2 rounded transition-all duration-150
+                                    className={`w-full flex items-center justify-between font-medium text-sm py-3 px-2 rounded transition-all duration-150
                                         ${openMenu === item.label
                                             ? "text-black bg-gray-100"
                                             : "text-text hover:bg-gray-50"
@@ -116,7 +116,7 @@ function MobileMenu() {
                                 key={item.label}
                                 to={item.path}
                                 onClick={() => setActiveLink(item.label)}
-                                className={`block font-medium text-[14px] py-3 border-b border-gray-100 px-2 rounded transition-all duration-150
+                                className={`block font-medium text-sm py-3 border-b border-gray-100 px-2 rounded transition-all duration-150
                                     ${activeLink === item.label
                                         ? "text-black bg-gray-100 border-l-2 border-l-black pl-3"
                                         : "text-text hover:bg-gray-50 hover:pl-3"

@@ -15,8 +15,9 @@ const cats = [
 
 function Categories() {
     return (
-        <div className="w-full">
-            <div className="max-w-[1200px] w-full py-[80px] flex flex-col gap-[40px] mx-auto px-4">
+        <section className="categories">
+        <div className="container mx-auto">
+            <div className="max-w-[1200px] w-full py-20 flex flex-col gap-[40px] px-4">
                 <div className="w-full flex items-center justify-center">
                     <p className="font-bold text-[28px] whitespace-nowrap leading-[42px] text-center text-text">
                         Shop by Categories
@@ -28,7 +29,7 @@ function Categories() {
                             <Link to={cat.path}>
                             <img src={cat.img} alt={cat.name} className="w-[140px] h-[140px] hover:scale-90 transition-transform duration-300 rounded-full object-cover" />
                             </Link>
-                            <p className="font-medium text-[14px] leading-[21px] text-text">
+                            <p className="font-medium text-sm leading-[21px] text-text">
                                 {cat.name}
                             </p>
                         </div>
@@ -36,6 +37,7 @@ function Categories() {
                 </div>
             </div>
         </div>
+        </section>
     );
 }
 

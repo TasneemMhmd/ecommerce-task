@@ -1,9 +1,8 @@
-function IconBtn({ onClick, icon, size, className = "" }) {
+function IconBtn({ onClick, icon, className = "" }) {
     return (
         <button
             onClick={onClick}
-            className={`w-8 h-8 rounded-full flex items-center justify-center hover:bg-badge transition-colors duration-200 ${className}`}
-        >
+            className={`rounded-full flex items-center justify-center hover:shadow-[0_0_0_8px] hover:shadow-badge transition-all duration-200 ${className}`}>
             {icon}
         </button>
     );

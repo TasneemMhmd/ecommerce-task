@@ -1,5 +1,5 @@
 import { useState } from "react";
-import star from "../../assets/icons/star.svg";
+import Star from "../../assets/icons/star.svg?react";
 import { useCart } from "../../hooks/useCart";
 import { useNavigate } from "react-router-dom";
 
@@ -14,6 +14,7 @@ function ProductCard({ id, img, rating, title, price, badge, isDragging }) {
     const handleCardClick = () => {
         if (!isDragging) navigate(`/product/${id}`);
     };
+    
 
     return (
         <div className="relative w-full flex flex-col gap-3">
@@ -32,7 +33,9 @@ function ProductCard({ id, img, rating, title, price, badge, isDragging }) {
 
                 <div
                     className={`absolute top-2 right-2 bg-white rounded-full w-9 h-9 flex items-center justify-center cursor-pointer transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
-                    onClick={() => setIsWishlisted(!isWishlisted)}
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setIsWishlisted(!isWishlisted)}}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -48,21 +51,26 @@ function ProductCard({ id, img, rating, title, price, badge, isDragging }) {
                     {isInCart ? (
                         <div className="w-[90%] h-[44px] bg-text text-white rounded-[4px] flex items-center justify-between px-4">
                             <button
-                                onClick={() => updateQuantity(cartItem.id, cartItem.quantity - 1)}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    updateQuantity(cartItem.id, cartItem.quantity - 1)}}
                                 className="text-white text-lg font-medium hover:opacity-60 transition-opacity"
                             >
                                 −
                             </button>
                             <span className="font-medium text-[13px]">{cartItem.quantity}</span>
                             <button
-                                onClick={() => updateQuantity(cartItem.id, cartItem.quantity + 1)}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    updateQuantity(cartItem.id, cartItem.quantity + 1)}}
                                 className="text-white text-lg font-medium hover:opacity-60 transition-opacity"
                             >
                                 +
                             </button>
                         </div>
                     ) : (<button
-                        onClick={() => {
+                        onClick={(e) => {
+                            e.stopPropagation();
                             toggleCart();
                             addItem({ id, img, title, price, rating })
                         }}
@@ -78,18 +86,15 @@ function ProductCard({ id, img, rating, title, price, badge, isDragging }) {
             <div className="w-full flex flex-col gap-1">
                 <div className="flex gap-0.5">
                     {[...Array(5)].map((_, index) => (
-                        <img
-                            key={index}
-                            src={star}
-                            alt="Star"
+                        <Star
                             className={`w-3 h-3 ${index < Math.round(rating) ? 'opacity-100' : 'opacity-0'}`}
                         />
                     ))}
                 </div>
-                <p className="w-full font-medium text-[14px] leading-[19.6px] text-text line-clamp-2">
+                <p className="w-full font-medium text-sm leading-[19.6px] text-text line-clamp-2">
                     {title}
                 </p>
-                <p className="text-text font-semibold text-[14px] leading-[21px]">
+                <p className="text-text font-semibold text-sm leading-[21px]">
                     ${price.toFixed(2)}
                 </p>
             </div>

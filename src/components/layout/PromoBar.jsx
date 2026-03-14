@@ -6,17 +6,18 @@ import { Link } from "react-router-dom";
 function PromoBar() {
     const [isVisible, setIsVisible] = useState(true);
     return (
-        <>
+        <section className="promo-bar">
             {isVisible && (
-                <div className="w-full bg-primary border-b">
-                    <div className="max-w-[1440px] mx-auto px-[24px] pt-[9px] pb-[10px] flex justify-center items-center">
+                <div className="container-fluid mx-auto bg-primary border-b">
+                    <div className="px-6 pt-[9px] pb-[10px] flex justify-center items-center">
                         <p className="text-[13px] leading-[19.5px] font-normal text-white">
-                            📦 30% off storewide — Limited time! <span className="hidden md:inline">S
-                                <Link to="/shop"><span className="underline cursor-pointer">
-                                    hop Now →
-                                </span></Link></span>
+                            📦 30% off storewide — Limited time! <span className="hidden md:inline">
+                                <Link to="/shop">
+                                    S<span className="underline">hop Now →</span>
+                                </Link>
+                            </span>
                         </p>
-                        <div className="ml-2 md:absolute md:right-[24px]">
+                        <div className="ml-2 md:absolute md:right-6">
                             <IconBtn
                                 onClick={() => setIsVisible(false)}
                                 icon={<X className="w-4 h-4 text-white" />}
@@ -25,8 +26,9 @@ function PromoBar() {
                         </div>
                     </div>
                 </div>
-            )}
-        </>
+            )
+            }
+        </section>
     )
 }
 export default PromoBar;

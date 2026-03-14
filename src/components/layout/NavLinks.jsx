@@ -17,8 +17,8 @@ const navItems = [
         items: [
             { label: "Pro1", path: "/product/1" },
             { label: "Pro2", path: "/product/2" },
-            { label: "Pro3", path: "/product/3" }
-        ]
+            { label: "Pro3", path: "/product/3" },
+        ],
     },
     { label: "Contact Us", path: "/contact" },
 ];
@@ -40,9 +40,10 @@ function NavLinks() {
                     />
                 ) : (
                     <AnimatedLink
+                        key={item.label}
                         label={item.label}
                         to={item.path}
-                        className="font-medium text-[14px] leading-[21px] text-text"
+                        className="font-medium text-sm leading-[21px] text-text"
                         groupHover
                     />
                 )

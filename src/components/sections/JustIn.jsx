@@ -32,8 +32,9 @@ function JustIn() {
     if (!products.length) return null;
 
     return (
-        <div className="w-full">
-            <div className="max-w-[1200px] mx-auto py-[80px] flex flex-col gap-[40px] px-6">
+        <section className="JustIn">
+        <div className="container mx-auto">
+            <div className="py-[80px] flex flex-col gap-[40px] px-6">
                 <div className="w-full flex items-center justify-between">
                     <p className="font-bold text-[28px] leading-[42px] text-text whitespace-nowrap">
                         Just In
@@ -45,8 +46,8 @@ function JustIn() {
                                 <span
                                     key={i}
                                     className={`rounded-full transition-all duration-300 ${activeIndex % 3 === i
-                                            ? "w-[8px] h-[8px] bg-text"
-                                            : "w-[8px] h-[8px] bg-[#D1D5DB]"
+                                        ? "w-[8px] h-[8px] bg-text"
+                                        : "w-[8px] h-[8px] bg-[#D1D5DB]"
                                         }`}
                                 />
                             ))}
@@ -63,9 +64,9 @@ function JustIn() {
                         loop={needsSwiper}
                         autoplay={needsSwiper ? { delay: 2000, disableOnInteraction: false } : false}
                         onSlideChange={(swiper) => {
-        setActiveIndex(swiper.realIndex);
-        setTimeout(() => setIsDragging(false), 100);
-    }}
+                            setActiveIndex(swiper.realIndex);
+                            setTimeout(() => setIsDragging(false), 100);
+                        }}
                         breakpoints={{
                             0: { slidesPerView: 1.5, spaceBetween: 16 },
                             480: { slidesPerView: 2.5, spaceBetween: 16 },
@@ -84,7 +85,7 @@ function JustIn() {
                                     price={product.price}
                                     rating={product.rating.rate}
                                     badge="New"
-                                        isDragging={isDragging}
+                                    isDragging={isDragging}
 
                                 />
                             </SwiperSlide>
@@ -93,6 +94,7 @@ function JustIn() {
                 </div>
             </div>
         </div>
+        </section>
     );
 }
 

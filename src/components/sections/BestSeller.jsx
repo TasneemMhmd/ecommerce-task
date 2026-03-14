@@ -10,28 +10,30 @@ function BestSeller() {
     }, []);
 
     return (
-        <div className="w-full">
-            <div className="max-w-[1200px] w-full flex flex-col gap-[40px] pt-[160px] pb-[80px] mx-auto px-6">
-                <div className="w-full flex justify-center items-center">
-                    <p className="font-bold text-[28px] leading-[42px] text-center text-text whitespace-nowrap">
-                        Best Seller
-                    </p>
-                </div>
-                <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-[24px]">
-                    {products.map((product) => (
-                        <ProductCard
-                            key={product.id}
-                            id={product.id}
-                            img={product.image}
-                            title={product.title}
-                            price={product.price}
-                            rating={product.rating.rate}
-                            badge="Hot"
-                        />
-                    ))}
+        <section className="best-seller">
+            <div className="container mx-auto">
+                <div className="w-full flex flex-col gap-10 pt-40 pb-20 px-6">
+                    <div className="w-full flex justify-center items-center">
+                        <p className="font-bold text-[28px] leading-[42px] text-center text-text whitespace-nowrap">
+                            Best Seller
+                        </p>
+                    </div>
+                    <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-6">
+                        {products.map((product) => (
+                            <ProductCard
+                                key={product.id}
+                                id={product.id}
+                                img={product.image}
+                                title={product.title}
+                                price={product.price}
+                                rating={product.rating.rate}
+                                badge="Hot"
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

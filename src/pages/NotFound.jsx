@@ -24,7 +24,7 @@ function NotFound() {
             <div className="flex items-center gap-3">
                 <Link
                     to="/"
-                    className="h-[44px] px-6 border bg-primary text-white hover:border-primary hover:bg-white hover:text-primary font-medium text-[14px] flex items-center justify-center rounded-[4px] transition-all duration-200"
+                    className="h-[44px] px-6 border bg-primary text-white hover:border-primary hover:bg-white hover:text-primary font-medium text-sm flex items-center justify-center rounded-[4px] transition-all duration-200"
                 >
                     Back to Home
                 </Link>

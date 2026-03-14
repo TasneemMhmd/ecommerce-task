@@ -17,8 +17,6 @@ import WinterCollectionsVideo from "../components/sections/WinterCollectionsVide
 function Home() {
     return (
         <>
-            <PromoBar />
-            <Header />
             <CartSidebar />
             <HeroSection />
             <Brands />
@@ -31,7 +29,6 @@ function Home() {
             <Articles />
             <InstagramFeed />
             <Features />
-            <Footer />
         </>
     );
 }
