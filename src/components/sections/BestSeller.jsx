@@ -12,13 +12,13 @@ function BestSeller() {
     return (
         <section className="best-seller">
             <div className="container mx-auto">
-                <div className="w-full flex flex-col gap-10 pt-40 pb-20 px-6">
+                <div className="w-full flex flex-col gap-4 md:gap-10 py-8 md:pt-40 md:pb-20 px-6">
                     <div className="w-full flex justify-center items-center">
                         <p className="font-bold text-[28px] leading-[42px] text-center text-text whitespace-nowrap">
                             Best Seller
                         </p>
                     </div>
-                    <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6">
                         {products.map((product) => (
                             <ProductCard
                                 key={product.id}

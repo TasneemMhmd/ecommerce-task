@@ -9,6 +9,7 @@ import pay from "../../assets/images/pay.png";
 import { ArrowRight, Check } from "lucide-react";
 import AnimatedLink from "../ui/AnimatedLink";
 import { useState } from "react";
+import Accordion from "../ui/Accordion";
 
 const socialIcons = [
     { name: "instagram", icon: Instagram, href: "https://instagram.com" },
@@ -52,7 +53,7 @@ function Footer() {
     };
 
     return (
-        <footer className="footer bg-badge pt-20 pb-10 ">
+        <footer className="footer bg-badge pt-6 md:pt-20 pb-10 ">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col gap-[59.99px]">
                     <div className="grid grid-cols-1 lg:grid-cols-6 gap-10">
@@ -87,9 +88,8 @@ function Footer() {
                                 })}
                             </div>
                         </div>
-                        <div className="col-span-1 flex flex-col gap-6">
-                            <p className="font-semibold text-4 leading-6 text-text">Page</p>
-                            <div className="flex flex-col gap-[12px]">
+                        <Accordion title="Page">
+                            <div className="flex flex-col md:gap-4 gap-6">
                                 {pages.map((page) => (
                                     <div key={page.name} className="group w-fit relative">
                                         <AnimatedLink
@@ -100,10 +100,9 @@ function Footer() {
                                     </div>
                                 ))}
                             </div>
-                        </div>
-                        <div className="col-span-1 flex flex-col gap-6 ">
-                            <p className="font-semibold text-4 leading-6 text-text">Info</p>
-                            <div className="flex flex-col gap-[12px]">
+                        </Accordion>
+                        <Accordion title="Info">
+                            <div className="flex flex-col md:gap-4 gap-6">
                                 {Info.map((info) => (
                                     <div key={info.name} className="group w-fit relative">
                                         <AnimatedLink
@@ -114,8 +113,8 @@ function Footer() {
                                     </div>
                                 ))}
                             </div>
-                        </div>
-                        <div className="col-span-1 lg:col-span-2 flex flex-col gap-6">
+                        </Accordion>
+                        <div className="col-span-1 lg:col-span-2 flex flex-col gap-6 border-t lg:border-0 py-6 md:py-auto">
                             <p className="font-semibold text-base leading-6 text-text">
                                 Join Newsletter
                             </p>

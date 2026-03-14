@@ -8,14 +8,14 @@ function CartSidebar() {
     const { cartOpen, toggleCart, cartItems, updateQuantity, deleteItem, subtotal, total, loading } = useCart();
 
     return (
-        <section className="cart-sidebar">
+        <section className="cart-sidebar ">
             {cartOpen && (
                 <div
                     className="fixed inset-0 bg-black/40 z-40 transition-opacity duration-300"
                     onClick={toggleCart}
                 />
             )}
-            <div className={`cotainer fixed top-0 right-0 h-full w-full max-w-[400px] bg-white z-50 flex flex-col shadow-xl transition-transform duration-300 ${cartOpen ? "translate-x-0" : "translate-x-full"}`}>
+            <div className={`container fixed top-0 right-0 h-full w-full max-w-[400px] bg-white z-50 flex flex-col shadow-xl transition-transform duration-300 ${cartOpen ? "translate-x-0" : "translate-x-full"}`}>
                 <div className="flex items-center justify-between px-6 py-5 border-b">
                     <p className="font-semibold text-text text-2xl leading-9 tracking-[-0.5px]">Cart</p>
                     <IconBtn onClick={toggleCart} icon={<X size={20} />} />

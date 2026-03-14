@@ -34,7 +34,7 @@ function JustIn() {
     return (
         <section className="JustIn">
         <div className="container mx-auto">
-            <div className="py-[80px] flex flex-col gap-[40px] px-6">
+            <div className="py-10 md:py-20 flex flex-col gap-[40px] px-6">
                 <div className="w-full flex items-center justify-between">
                     <p className="font-bold text-[28px] leading-[42px] text-text whitespace-nowrap">
                         Just In

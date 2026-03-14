@@ -15,12 +15,12 @@ function WinterCollectionsVideo() {
     return (
         <section className="winter-video">
             <div className="container mx-auto px-6 md:px-auto">
-                <div className="w-full pt-[80px] pb-[80px] flex flex-col gap-[32px]">
-                    <div className="w-full flex flex-col gap-[8px] items-center">
+                <div className="w-full py-6 md:py-20 flex flex-col gap-8">
+                    <div className="w-full flex flex-col gap-4 items-center">
                         <p className="font-semibold text-xs leading-[18px] tracking-[1px] text-center uppercase text-secondary">
                             PROMOTION
                         </p>
-                        <p className="font-bold text-[32px] leading-[48px] text-center text-text">
+                        <p className="font-bold text-[32px] leading-[48px] text-center text-text text-nowrap">
                             Winter Collections
                         </p>
                         <p className="font-normal text-base leading-6 text-center text-textLight2">
@@ -28,7 +28,7 @@ function WinterCollectionsVideo() {
                         </p>
                     </div>
 
-                    <div className="relative w-full max-w-[1200px] h-[500px] rounded-[12px] overflow-hidden">
+                    <div className="relative w-full max-w-[1200px] h-[500px] rounded-xl overflow-hidden">
                         <video
                             ref={videoRef}
                             className="w-full h-full object-cover"

@@ -14,9 +14,9 @@ function Articles() {
     return (
         <section className="articles">
         <div className="container mx-auto">
-            <div className="w-full py-20 flex flex-col gap-10 px-6">
+            <div className="w-full py-8 md:py-20 flex flex-col gap-10 px-6">
                 <div className="w-full flex justify-between items-center">
-                    <p className="font-bold text-[28px] leading-[42px]  text-text whitespace-nowrap">
+                    <p className="font-bold text-[28px] leading-[42px]  text-text">
                         Latest Articles
                     </p>
                     <div className="flex gap-1">

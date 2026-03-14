@@ -17,8 +17,8 @@ const collections = [
 function Collections() {
     return (
         <section className="collections">
-            <div className="container mx-auto px-6 md:px-auto">
-                <div className="max-w-[1200px] w-full grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            <div className="container mx-auto p-6 md:p-auto">
+                <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                     {collections.map((collection) => (
                         <Link to="/collections" key={collection.title} className="relative w-full aspect-[588/400] rounded-[12px] overflow-hidden group block">
                             <HoverImg src={collection.image} alt={collection.title} className="w-full h-full rounded-[12px]" />

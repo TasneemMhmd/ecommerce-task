@@ -14,7 +14,8 @@ function ProductCard({ id, img, rating, title, price, badge, isDragging }) {
     const handleCardClick = () => {
         if (!isDragging) navigate(`/product/${id}`);
     };
-    
+    const isMobile = window.innerWidth < 768;
+
 
     return (
         <div className="relative w-full flex flex-col gap-3">
@@ -32,10 +33,11 @@ function ProductCard({ id, img, rating, title, price, badge, isDragging }) {
                 </div>
 
                 <div
-                    className={`absolute top-2 right-2 bg-white rounded-full w-9 h-9 flex items-center justify-center cursor-pointer transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
+                    className={`absolute top-2 right-2 bg-white rounded-full w-9 h-9 flex items-center justify-center cursor-pointer transition-opacity duration-300 ${isMobile || isHovered ? 'opacity-100' : 'opacity-0'}`}
                     onClick={(e) => {
                         e.stopPropagation();
-                        setIsWishlisted(!isWishlisted)}}
+                        setIsWishlisted(!isWishlisted)
+                    }}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -47,39 +49,41 @@ function ProductCard({ id, img, rating, title, price, badge, isDragging }) {
                     </svg>
                 </div>
 
-                <div className={`absolute bottom-0 left-0 right-0 flex items-center justify-center pb-2 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-                    {isInCart ? (
-                        <div className="w-[90%] h-[44px] bg-text text-white rounded-[4px] flex items-center justify-between px-4">
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    updateQuantity(cartItem.id, cartItem.quantity - 1)}}
-                                className="text-white text-lg font-medium hover:opacity-60 transition-opacity"
-                            >
-                                −
-                            </button>
-                            <span className="font-medium text-[13px]">{cartItem.quantity}</span>
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    updateQuantity(cartItem.id, cartItem.quantity + 1)}}
-                                className="text-white text-lg font-medium hover:opacity-60 transition-opacity"
-                            >
-                                +
-                            </button>
-                        </div>
-                    ) : (<button
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            toggleCart();
-                            addItem({ id, img, title, price, rating })
-                        }}
-                        className="w-[90%] h-[44px] bg-text text-white rounded-[4px] flex items-center justify-center">
-                        <span className="font-medium text-[13px] leading-[19.5px]">
-                            Add to cart
-                        </span>
-                    </button>
-                    )}
+
+                <div className={`absolute bottom-0 left-0 right-0 flex items-center justify-center pb-2 transition-opacity duration-300 ${isMobile || isHovered ? 'opacity-100' : 'opacity-0'}`}>                    {isInCart ? (
+                    <div className="w-[90%] h-8 md:h-[44px] bg-text text-white rounded-[4px] flex items-center justify-between px-4">
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                updateQuantity(cartItem.id, cartItem.quantity - 1)
+                            }}
+                            className="text-white text-lg font-medium hover:opacity-60 transition-opacity"
+                        >
+                            −
+                        </button>
+                        <span className="font-medium text-[13px]">{cartItem.quantity}</span>
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                updateQuantity(cartItem.id, cartItem.quantity + 1)
+                            }}
+                            className="text-white text-lg font-medium hover:opacity-60 transition-opacity"
+                        >
+                            +
+                        </button>
+                    </div>
+                ) : (<button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        toggleCart();
+                        addItem({ id, img, title, price, rating })
+                    }}
+                    className="w-[90%] h-8 md:h-[44px] bg-text text-white rounded-[4px] flex items-center justify-center">
+                    <span className="font-medium text-[13px] leading-[19.5px]">
+                        Add to cart
+                    </span>
+                </button>
+                )}
                 </div>
             </div>
 

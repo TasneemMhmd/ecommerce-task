@@ -16,7 +16,7 @@ function InstagramFeed() {
     return (
         <section className="instagram">
             <div className="container mx-auto">
-                <div className="w-full py-20 flex flex-col gap-2 px-6">
+                <div className="w-full py-8 md:py-20 flex flex-col gap-2 px-6">
                     <div className="w-full flex justify-center items-center">
                         <p className="font-semibold text-xs leading-[18px] tracking-[1px] text-center uppercase text-textLight">
                             NEWSFEED

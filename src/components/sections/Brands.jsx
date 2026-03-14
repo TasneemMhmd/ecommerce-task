@@ -10,8 +10,7 @@ const DESKTOP_VISIBLE = 5;
 
 function Brands() {
     const needsSwiper = brands.length > DESKTOP_VISIBLE;
-    const [swiperEnabled, setSwiperEnabled] = useState(window.innerWidth < 768 || needsSwiper);
-
+    const [swiperEnabled, setSwiperEnabled] = useState(() => window.innerWidth < 768 || needsSwiper);
     useEffect(() => {
         const handleResize = () => {
             setSwiperEnabled(window.innerWidth < 768 || needsSwiper);
@@ -23,7 +22,7 @@ function Brands() {
     return (
         <section className="brands">
             <div className="container mx-auto">
-                <div className="flex flex-col gap-6 px-6 py-10 items-center justify-center">
+                <div className="flex flex-col gap-6 md:py-10 px-6 py-6 items-center justify-center">
                     <div className="w-full max-w-[1152px] h-[30px] flex items-center justify-center">
                         <p className="font-semibold h-6 w-[127.419px] text-base leading-6 text-center text-text">
                             Trending Brands
@@ -41,8 +40,8 @@ function Brands() {
                                 prevEl: ".brands-prev",
                             }}
                             breakpoints={{
-                                0: { slidesPerView: 2.5, spaceBetween: 24, enabled: true },
-                                768: { slidesPerView: DESKTOP_VISIBLE, spaceBetween: 24, enabled: needsSwiper },
+                                0: { slidesPerView: 2.5, spaceBetween: 24 },
+                                768: { slidesPerView: DESKTOP_VISIBLE, spaceBetween: 24 },
                             }}
                         >
                             {brands.map((brand, index) => (
@@ -50,7 +49,7 @@ function Brands() {
                                     key={index}
                                     style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
                                 >
-                                    <p className="w-[122px] h-[30px] font-extrabold text-xl leading-[30px]  text-center">
+                                    <p className="w-[122px] h-[30px] font-extrabold text-xl leading-[30px] text-center">
                                         {brand}
                                     </p>
                                 </SwiperSlide>
