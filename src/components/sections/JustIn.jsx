@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../products/ProductCard";
 import { getProducts } from "../../services/api";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import "swiper/css";
+import CustomSwiper from "../ui/CustomSwiper";
 import Error from "../ui/Error";
 import Loader from "../ui/Loader";
 
@@ -33,40 +31,33 @@ function JustIn() {
 
     return (
         <section className="JustIn">
-        <div className="container mx-auto">
-            <div className="py-10 md:py-20 flex flex-col gap-[40px] px-6">
-                <div className="w-full flex items-center justify-between">
-                    <p className="font-bold text-[28px] leading-[42px] text-text whitespace-nowrap">
-                        Just In
-                    </p>
-
-                    {needsSwiper && (
-                        <div className="flex items-center gap-2">
-                            {[0, 1, 2].map((i) => (
-                                <span
-                                    key={i}
-                                    className={`rounded-full transition-all duration-300 ${activeIndex % 3 === i
-                                        ? "w-[8px] h-[8px] bg-text"
-                                        : "w-[8px] h-[8px] bg-[#D1D5DB]"
-                                        }`}
-                                />
-                            ))}
-                        </div>
-                    )}
-                </div>
-
-                <div className="w-full">
-                    <Swiper
-                        onSliderFirstMove={() => setIsDragging(true)}
-                        key={needsSwiper ? "swiper-enabled" : "swiper-disabled"}
-                        modules={[Autoplay]}
-                        grabCursor={true}
+            <div className="container mx-auto">
+                <div className="py-10 md:py-20 flex flex-col gap-[40px] px-6">
+                    <div className="w-full flex items-center justify-between">
+                        <p className="font-bold text-[28px] leading-[42px] text-text whitespace-nowrap">
+                            Just In
+                        </p>
+                        {needsSwiper && (
+                            <div className="flex items-center gap-2">
+                                {[0, 1, 2].map((i) => (
+                                    <span
+                                        key={i}
+                                        className={`rounded-full transition-all duration-300 ${activeIndex % 3 === i ? "w-2 h-2 bg-text" : "w-2 h-2 bg-[#D1D5DB]"}`}
+                                    />
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                    <CustomSwiper
+                        id="justin"
+                        items={products}
                         loop={needsSwiper}
                         autoplay={needsSwiper ? { delay: 2000, disableOnInteraction: false } : false}
                         onSlideChange={(swiper) => {
                             setActiveIndex(swiper.realIndex);
                             setTimeout(() => setIsDragging(false), 100);
                         }}
+                        onSliderFirstMove={() => setIsDragging(true)}
                         breakpoints={{
                             0: { slidesPerView: 1.5, spaceBetween: 16 },
                             480: { slidesPerView: 2.5, spaceBetween: 16 },
@@ -74,26 +65,20 @@ function JustIn() {
                             1024: { slidesPerView: 4, spaceBetween: 24 },
                             1200: { slidesPerView: DESKTOP_VISIBLE, spaceBetween: 24, enabled: needsSwiper },
                         }}
-                        className="w-full"
-                    >
-                        {products.map((product) => (
-                            <SwiperSlide key={product.id}>
-                                <ProductCard
-                                    id={product.id}
-                                    img={product.image}
-                                    title={product.title}
-                                    price={product.price}
-                                    rating={product.rating.rate}
-                                    badge="New"
-                                    isDragging={isDragging}
-
-                                />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                        renderItem={(product) => (
+                            <ProductCard
+                                id={product.id}
+                                img={product.image}
+                                title={product.title}
+                                price={product.price}
+                                rating={product.rating.rate}
+                                badge="New"
+                                isDragging={isDragging}
+                            />
+                        )}
+                    />
                 </div>
             </div>
-        </div>
         </section>
     );
 }
